@@ -6,3 +6,4 @@ __all__ = ['Task']
 
 class Task(models.Model):
     inputs = JsonField()
+    successWebhook = models.URLField(null=True)

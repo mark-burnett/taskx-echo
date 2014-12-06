@@ -110,3 +110,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
     'PAGINATE_BY': 10,
 }
+
+
+# Celery Configuration
+CELERYD_PREFETCH_MULTIPLIER = 10
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_ACKS_LATE = True
+CELERY_BROKER_URL = os.environ.get('RABBITMQ_BIGWIG_URL', 'amqp://')
+CELERY_TASK_SERIALIZER = 'json'

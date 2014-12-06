@@ -11,4 +11,4 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = models.Task
-        fields = ('url', 'inputs', 'outputs')
+        fields = ('url', 'inputs', 'outputs', 'successWebhook')

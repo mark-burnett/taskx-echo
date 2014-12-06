@@ -58,9 +58,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'echo.urls'
+ROOT_URLCONF = 'taskx_service.urls'
 
-WSGI_APPLICATION = 'echo.wsgi.application'
+WSGI_APPLICATION = 'taskx_service.wsgi.application'
 
 APPEND_SLASH = False
 

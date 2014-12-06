@@ -45,7 +45,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'django_pgjson',
 
-    'echo_task',
+    'echo',
 )
 
 MIDDLEWARE_CLASSES = (

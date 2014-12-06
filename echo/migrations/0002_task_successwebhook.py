@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('echo_task', '0001_initial'),
+        ('echo', '0001_initial'),
     ]
 
     operations = [

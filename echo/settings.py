@@ -113,8 +113,8 @@ REST_FRAMEWORK = {
 
 
 # Celery Configuration
+BROKER_URL = os.environ.get('RABBITMQ_BIGWIG_URL', 'amqp://')
 CELERYD_PREFETCH_MULTIPLIER = 10
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_ACKS_LATE = True
-CELERY_BROKER_URL = os.environ.get('RABBITMQ_BIGWIG_URL', 'amqp://')
 CELERY_TASK_SERIALIZER = 'json'

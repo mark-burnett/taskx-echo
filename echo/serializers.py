@@ -8,7 +8,9 @@ __all__ = ['TaskSerializer']
 class TaskSerializer(serializers.HyperlinkedModelSerializer):
     inputs = PassThroughField()
     outputs = serializers.ReadOnlyField(source='inputs')
+    subscribedURL = serializers.URLField(required=False)
+    status = serializers.CharField(required=False)
 
     class Meta:
         model = models.Task
-        fields = ('url', 'inputs', 'outputs', 'successWebhook')
+        fields = ('url', 'inputs', 'outputs', 'status', 'subscribedURL')

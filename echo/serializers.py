@@ -1,5 +1,5 @@
 from . import models
-from .fields import PassThroughField
+from taskx_service.pass_through_field import PassThroughField
 from rest_framework import serializers
 
 __all__ = ['TaskSerializer']

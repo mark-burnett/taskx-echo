@@ -13,6 +13,6 @@ class Task(models.Model):
     )
 
     id = UUIDField(auto=True, primary_key=True)
-    inputs = JsonField()
+    inputs = JsonField(editable=False)
     status = models.TextField(choices=STATUS_CHOICES, default=STATUS_SUCCEEDED)
-    subscribedURL = models.URLField(null=True)
+    subscribedURL = models.URLField(null=True, editable=False)

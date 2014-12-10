@@ -11,7 +11,7 @@ class Task(models.Model):
 
     id = UUIDField(auto=True, primary_key=True)
     inputs = JsonField(editable=False)
-    state = FSMField(default='new')
+    state = FSMField(default='new', null=False, blank=False)
     subscribedURL = models.URLField(null=True, editable=False)
 
     @transition(field=state, source='new', target='succeeded')

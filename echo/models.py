@@ -11,7 +11,7 @@ class Task(models.Model):
 
     id = UUIDField(auto=True, primary_key=True)
     inputs = JsonField(editable=False)
-    state = FSMField('new')
+    state = FSMField(default='new')
     subscribedURL = models.URLField(null=True, editable=False)
 
     @transition(field=state, source='new', target='succeeded')
@@ -19,5 +19,5 @@ class Task(models.Model):
         if self.subscribedURL:
             current_app.tasks['webhook'].delay(self.subscribedURL, {
                 'outputs': self.inputs,
-                'status': self.status,
+                'state': self.state,
             })

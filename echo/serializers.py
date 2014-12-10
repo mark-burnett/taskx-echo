@@ -9,8 +9,8 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
     inputs = PassThroughField()
     outputs = serializers.ReadOnlyField(source='inputs')
     subscribedURL = serializers.URLField(required=False)
-    status = serializers.CharField(required=False)
+    state = serializers.CharField(required=False, read_only=True)
 
     class Meta:
         model = models.Task
-        fields = ('url', 'inputs', 'outputs', 'status', 'subscribedURL')
+        fields = ('url', 'inputs', 'outputs', 'state', 'subscribedURL')
